@@ -1,3 +1,4 @@
+#This is a Tkinter GUI app that I mostly wrote to time my productivity, but it since it is essentially multiple stopwatches that all pause when a single one is resumed, it can work as conventional stopwatch. The app functions by creating a log of timestamps and it counts a running total throughout the day. The app can save and load the stamps to have a minute by minute record of the week if desired.
 # import tkinter
 try:
     import tkinter as tk
@@ -23,19 +24,6 @@ from datetime import datetime, timedelta
 #      start end
 #      start end
 
-
-
-
-
-
-
-
-
-
-#import datetime
-#from datetime import datetime
-#from datetime import timedelta
-#import time
 tic_time=200
 time_delta_zero=timedelta()
 
