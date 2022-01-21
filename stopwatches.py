@@ -1,4 +1,6 @@
 # import tkinter
+#to install tkinter in linux do:
+# sudo apt-get install python3-tk
 try:
     import tkinter as tk
 except ImportError:
@@ -13,7 +15,6 @@ except ImportError:
     print("import error2")
 
 import os
-from winsound import Beep
 from datetime import datetime, timedelta
 
 #stopwatch description
