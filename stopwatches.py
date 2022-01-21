@@ -174,24 +174,27 @@ class Timer:
     def start_stopwatch(self,i):
         was_active=self.active
         self.active=True
-        print('start',i,end='')
+        now = datetime.now()
+        print('start',i,end=' ')
 #        self.debug()
-        print(gui_stopwatch_elements[i][0].get())
+        print(gui_stopwatch_elements[i][0].get(),end=' ')
+        print(str(now))
         # if stopwatch is brand new with zero
         if stopwatches[i]['stamps']==[]:
-            stopwatches[i]['stamps'].append([datetime.now(),None])
+            stopwatches[i]['stamps'].append([now,None])
             if not was_active: self.tick()
         else:
             # if end stamp exists, ie if not already open
             if stopwatches[i]['stamps'][-1][1] is not None:
-                stopwatches[i]['stamps'].append([datetime.now(),None])
+                stopwatches[i]['stamps'].append([now,None])
                 if not was_active: self.tick()
         #self.debug()
 
     def stop_stopwatch(self,i):
-        #print('stop',i,end='')
+        now = datetime.now()
+        print('stop',i,str(now))
         if stopwatches[i]['stamps']!=[] and stopwatches[i]['stamps'][-1][1] is None:
-            stopwatches[i]['stamps'][-1][1]=datetime.now()
+            stopwatches[i]['stamps'][-1][1]=now
             stopwatches[i]['elapsed']+=stopwatches[i]['stamps'][-1][1]-stopwatches[i]['stamps'][-1][0]
         self.active=self.is_active()
         #self.debug()
